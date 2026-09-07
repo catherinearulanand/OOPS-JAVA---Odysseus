@@ -1,0 +1,35 @@
+package com.odysseus.backend.domain;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "rooms")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Room {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true, nullable = false)
+    private String roomCode;
+
+    @Column(nullable = false)
+    private String roomName;
+
+    @Column(nullable = false)
+    private String roomType; // LECTURE_HALL, LAB
+
+    @Column(nullable = false)
+    private Integer capacity;
+
+    private String department;
+
+    @Builder.Default
+    private boolean active = true;
+}
