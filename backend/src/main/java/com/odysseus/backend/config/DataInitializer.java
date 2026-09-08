@@ -139,7 +139,16 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private void seedAcademicCalendar() {
-        if (calendarRepository.count() == 0) {
+        // Targeted match (not a table-wide count()==0 guard): the Lesson Plan module's
+        // own seeder (LessonPlanDataInitializer) also inserts an AcademicCalendar row,
+        // and CommandLineRunner execution order across beans is not guaranteed. A blind
+        // count()==0 check here would silently skip this placeholder Semester-5 demo
+        // calendar whenever the other seeder happens to run first, since the table would
+        // already be non-empty. Matching on this seeder's own (academicYear, semester)
+        // keeps the two additive seeders mutually safe regardless of run order.
+        boolean alreadySeeded = calendarRepository.findByActiveTrue().stream()
+                .anyMatch(c -> "2026-2027".equals(c.getAcademicYear()) && Integer.valueOf(5).equals(c.getSemester()));
+        if (!alreadySeeded) {
             AcademicCalendar calendar = AcademicCalendar.builder()
                     .academicYear("2026-2027")
                     .semester(5)

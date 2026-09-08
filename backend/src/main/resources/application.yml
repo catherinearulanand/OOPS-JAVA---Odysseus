@@ -30,5 +30,7 @@ spring:
       path: /h2-console
 
 jwt:
-  secret: ${JWT_SECRET:change-this-local-secret}
+  # Default is a dev-only placeholder long enough for HS256 (needs >= 256 bits) so a
+  # fresh clone boots without a WeakKeyException; override JWT_SECRET in real deployments.
+  secret: ${JWT_SECRET:OdysseusSuperSecretSigningKeyForJWTAuthentication2026SecureKeyWithMinimum256Bits}
   expiration-ms: 86400000 # 24 hours
