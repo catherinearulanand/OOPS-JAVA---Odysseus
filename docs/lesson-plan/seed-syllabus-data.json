@@ -1,0 +1,182 @@
+{
+  "$comment": "Phase 1 seed fixtures for the Lesson Plan module (Person C). Transcribed verbatim from docs/lesson-plan/SOURCE_MATERIAL.md section 4 (CSE R23 V1.2 Semester-III Curriculum & Syllabus). Do not add courses, units, COs, objectives, or period numbers beyond what SOURCE_MATERIAL.md states. Fields marked periodsAllottedIsDerived=true are NOT printed per-item in the source document; they are an even split of a source-given track total, computed by a stated Phase-1 convention documented in LESSON_PLAN_CONTRACT.md section 3.2 (Traceability register). objectives is intentionally empty for 2321CSC304R because SOURCE_MATERIAL.md section 4.2 lists Course Outcomes only, no separate Course Objectives text for that course.",
+  "subjects": [
+    {
+      "subjectCode": "2321CSC303J",
+      "subjectName": "FUNDAMENTALS OF ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING",
+      "semester": 3,
+      "category": "PC",
+      "courseType": "THEORY_CUM_PRACTICAL",
+      "periodsPerWeek": { "L": 2, "T": 0, "P": 2, "R": 0 },
+      "credits": 3,
+      "objectives": [
+        { "sequenceNumber": 1, "description": "To introduce foundational AI concepts, history, and applications." },
+        { "sequenceNumber": 2, "description": "To understand knowledge representation and reasoning." },
+        { "sequenceNumber": 3, "description": "To introduce machine learning concepts, types, and algorithms." },
+        { "sequenceNumber": 4, "description": "To apply supervised learning for classification and regression." },
+        { "sequenceNumber": 5, "description": "To apply unsupervised learning for clustering and dimensionality reduction." }
+      ],
+      "outcomes": [
+        { "coNumber": 1, "description": "Implement AI in problem solving techniques." },
+        { "coNumber": 2, "description": "Interpret knowledge representation and reasoning in AI systems." },
+        { "coNumber": 3, "description": "Analyse ML algorithms (linear/logistic regression)." },
+        { "coNumber": 4, "description": "Implement and evaluate supervised learning algorithms (classification/regression)." },
+        { "coNumber": 5, "description": "Apply unsupervised learning/clustering to unlabeled data." }
+      ],
+      "units": {
+        "THEORY": [
+          {
+            "unitNumber": 1,
+            "title": "Introduction to AI",
+            "topics": ["Agents", "Problem solving", "Search strategies", "CSPs"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 2,
+            "title": "Knowledge Representation & Reasoning",
+            "topics": ["Game search", "Logical agents", "Neural networks", "Bayes/Bayesian networks"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 3,
+            "title": "Introduction to Machine Learning",
+            "topics": ["Supervised learning", "Classification/regression", "Overfitting/underfitting"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 4,
+            "title": "Unsupervised Learning",
+            "topics": ["Types of unsupervised learning", "Preprocessing", "Dimensionality reduction", "Clustering"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 5,
+            "title": "Applied ML & Evaluation",
+            "topics": ["Feature selection", "Cross-validation", "Grid search", "Evaluation metrics"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          }
+        ],
+        "LAB": [
+          {
+            "unitNumber": 1,
+            "title": "Adversarial-search game agent",
+            "topics": [],
+            "periodsAllotted": 5,
+            "periodsAllottedIsDerived": true,
+            "derivationNote": "Source states 6 experiments totalling 30 practical periods but does not give a per-experiment count; 30/6=5 applied evenly. See LESSON_PLAN_CONTRACT.md section 3.2."
+          },
+          {
+            "unitNumber": 2,
+            "title": "Logical agent with resolution",
+            "topics": [],
+            "periodsAllotted": 5,
+            "periodsAllottedIsDerived": true,
+            "derivationNote": "Source states 6 experiments totalling 30 practical periods but does not give a per-experiment count; 30/6=5 applied evenly. See LESSON_PLAN_CONTRACT.md section 3.2."
+          },
+          {
+            "unitNumber": 3,
+            "title": "Bayesian network inference",
+            "topics": [],
+            "periodsAllotted": 5,
+            "periodsAllottedIsDerived": true,
+            "derivationNote": "Source states 6 experiments totalling 30 practical periods but does not give a per-experiment count; 30/6=5 applied evenly. See LESSON_PLAN_CONTRACT.md section 3.2."
+          },
+          {
+            "unitNumber": 4,
+            "title": "Supervised-model comparison on a dataset",
+            "topics": [],
+            "periodsAllotted": 5,
+            "periodsAllottedIsDerived": true,
+            "derivationNote": "Source states 6 experiments totalling 30 practical periods but does not give a per-experiment count; 30/6=5 applied evenly. See LESSON_PLAN_CONTRACT.md section 3.2."
+          },
+          {
+            "unitNumber": 5,
+            "title": "K-Means/Agglomerative clustering",
+            "topics": [],
+            "periodsAllotted": 5,
+            "periodsAllottedIsDerived": true,
+            "derivationNote": "Source states 6 experiments totalling 30 practical periods but does not give a per-experiment count; 30/6=5 applied evenly. See LESSON_PLAN_CONTRACT.md section 3.2."
+          },
+          {
+            "unitNumber": 6,
+            "title": "PCA (Principal Component Analysis)",
+            "topics": [],
+            "periodsAllotted": 5,
+            "periodsAllottedIsDerived": true,
+            "derivationNote": "Source states 6 experiments totalling 30 practical periods but does not give a per-experiment count; 30/6=5 applied evenly. See LESSON_PLAN_CONTRACT.md section 3.2."
+          }
+        ]
+      }
+    },
+    {
+      "subjectCode": "2321CSC304R",
+      "subjectName": "OBJECT ORIENTED PROGRAMMING USING JAVA",
+      "semester": 3,
+      "category": "PC",
+      "courseType": "THEORY_CUM_PROJECT",
+      "periodsPerWeek": { "L": 2, "T": 0, "P": 0, "R": 4 },
+      "credits": 4,
+      "objectives": [],
+      "outcomes": [
+        { "coNumber": 1, "description": "Apply OOP principles in Java." },
+        { "coNumber": 2, "description": "Execute Java programs with constructs, methods, and I/O." },
+        { "coNumber": 3, "description": "Implement polymorphism, overloading, overriding, inheritance, and interfaces." },
+        { "coNumber": 4, "description": "Handle exceptions and file operations." },
+        { "coNumber": 5, "description": "Build multithreaded applications using Java Collections." }
+      ],
+      "units": {
+        "THEORY": [
+          {
+            "unitNumber": 1,
+            "title": "Introduction to OOP & Java Basics",
+            "topics": ["OOP fundamentals", "JVM/JDK/JRE", "Syntax", "Data types", "Control structures", "I/O"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 2,
+            "title": "Methods and String Handling",
+            "topics": ["Classes/objects", "Method overloading", "Constructors", "Static/final", "Garbage collection", "Strings/StringBuffer/StringBuilder", "Arrays/ArrayList"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 3,
+            "title": "Inheritance and Polymorphism",
+            "topics": ["Types of inheritance", "Method overriding", "super keyword", "Dynamic dispatch", "Abstract classes", "Interfaces", "Packages/access modifiers"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 4,
+            "title": "Exception Handling, Files and Collections",
+            "topics": ["Checked/unchecked exceptions", "Custom exceptions", "Wrapper classes", "I/O streams", "Collections Framework"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          },
+          {
+            "unitNumber": 5,
+            "title": "Threads, Generics and JDBC",
+            "topics": ["Multithreading", "Thread lifecycle", "Synchronization", "Generics", "JDBC"],
+            "periodsAllotted": 6,
+            "periodsAllottedIsDerived": false
+          }
+        ],
+        "PROJECT": [
+          {
+            "unitNumber": 1,
+            "title": "Semester-long Individual/Group Project",
+            "topics": ["Individual/group project"],
+            "periodsAllotted": 60,
+            "periodsAllottedIsDerived": false
+          }
+        ]
+      }
+    }
+  ]
+}
