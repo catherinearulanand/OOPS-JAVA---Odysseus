@@ -42,19 +42,16 @@ export default function LoginPage({ onLogin }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '1.5rem' }}>
-      <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+      <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
         <div className="brand-wordmark" style={{ fontSize: '2.5rem', lineHeight: 1 }}>
           Odysseus
         </div>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.85rem', maxWidth: '360px', marginLeft: 'auto', marginRight: 'auto' }}>
-          Smart classroom scheduling and lesson planning for credit-based curricula.
-        </p>
       </div>
 
-      <div className="glass-panel fade-in-up" style={{ width: '100%', maxWidth: '420px', padding: '32px 28px', boxShadow: '0 12px 40px rgba(0,0,0,0.8)', animationDelay: '0.08s' }}>
-        <div style={{ marginBottom: '1.75rem' }}>
-          <h2 style={{ fontSize: '1.75rem' }}>Sign In</h2>
-          <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginTop: '0.3rem' }}>
+      <div className="glass-panel fade-in-up" style={{ width: '100%', maxWidth: '460px', padding: '24px 32px', boxShadow: '0 12px 40px rgba(0,0,0,0.8)', animationDelay: '0.08s' }}>
+        <div style={{ marginBottom: '1.1rem' }}>
+          <h2 style={{ fontSize: '1.5rem' }}>Sign In</h2>
+          <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginTop: '0.2rem' }}>
             Enter your institutional credentials to continue.
           </p>
         </div>
@@ -82,7 +79,7 @@ export default function LoginPage({ onLogin }) {
             </div>
           </div>
 
-          <div className="form-group" style={{ marginBottom: '2rem' }}>
+          <div className="form-group" style={{ marginBottom: '1.4rem' }}>
             <label className="form-label">Password:</label>
             <div style={{ position: 'relative' }}>
               <Lock size={18} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-dim)' }} />
@@ -102,13 +99,13 @@ export default function LoginPage({ onLogin }) {
           </button>
         </form>
 
-        <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-dim)' }}>
-          <p style={{ marginBottom: '0.35rem', fontWeight: 600, color: 'var(--text-muted)' }}>Demo credentials</p>
+        <div style={{ marginTop: '1.1rem', paddingTop: '1rem', borderTop: '1px solid var(--border-color)', textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-dim)' }}>
+          <p style={{ marginBottom: '0.3rem', fontWeight: 600, color: 'var(--text-muted)' }}>Demo credentials</p>
           <p>Admin <code>admin</code> / <code>admin123</code></p>
           <p>Faculty <code>faculty</code> / <code>faculty123</code></p>
         </div>
 
-        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '0.9rem', textAlign: 'center' }}>
           <Link to="/" style={{ color: 'var(--text-dim)', fontSize: '0.82rem', textDecoration: 'none' }}>
             ← Back to Landing Page
           </Link>
