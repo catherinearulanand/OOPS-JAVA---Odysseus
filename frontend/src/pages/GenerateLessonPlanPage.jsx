@@ -6,10 +6,10 @@ import {
 } from 'lucide-react';
 
 const TYPE_META = {
-  THEORY: { label: 'Theory', color: 'var(--accent-primary)', icon: BookOpen },
-  LAB: { label: 'Lab', color: 'var(--accent-secondary)', icon: FlaskConical },
-  PROJECT: { label: 'Project', color: 'var(--accent-warning)', icon: Rocket },
-  TUTORIAL: { label: 'Tutorial', color: '#a855f7', icon: GraduationCap }
+  THEORY: { label: 'Theory', color: 'var(--session-theory)', icon: BookOpen },
+  LAB: { label: 'Lab', color: 'var(--session-lab)', icon: FlaskConical },
+  PROJECT: { label: 'Project', color: 'var(--session-project)', icon: Rocket },
+  TUTORIAL: { label: 'Tutorial', color: 'var(--session-tutorial)', icon: GraduationCap }
 };
 
 const STATUS_BADGE = {

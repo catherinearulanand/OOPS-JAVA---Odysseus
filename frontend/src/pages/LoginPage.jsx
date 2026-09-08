@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Lock, User, AlertCircle, Sparkles } from 'lucide-react';
+import { Lock, User, AlertCircle } from 'lucide-react';
 
 export default function LoginPage({ onLogin }) {
   const [username, setUsername] = useState('admin');
@@ -41,13 +41,21 @@ export default function LoginPage({ onLogin }) {
   };
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '1.5rem' }}>
-      <div className="glass-panel" style={{ width: '100%', maxWidth: '420px', padding: '2.5rem', boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-          <div className="brand-logo" style={{ width: '56px', height: '56px', margin: '0 auto 1rem auto', fontSize: '1.75rem' }}>O</div>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 800 }}>ODYSSEUS</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', marginTop: '0.25rem' }}>
-            Person A — Admin & Data Entry Portal
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '1.5rem' }}>
+      <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+        <div className="brand-wordmark" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.25rem)', lineHeight: 1, background: 'linear-gradient(to bottom, #ffffff, #b7bfd4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          Odysseus
+        </div>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.85rem', maxWidth: '360px', marginLeft: 'auto', marginRight: 'auto' }}>
+          Smart classroom scheduling and lesson planning for credit-based curricula.
+        </p>
+      </div>
+
+      <div className="glass-panel fade-in-up" style={{ width: '100%', maxWidth: '420px', padding: '2.75rem', boxShadow: '0 24px 60px rgba(0,0,0,0.5)', animationDelay: '0.08s' }}>
+        <div style={{ marginBottom: '1.75rem' }}>
+          <h2 style={{ fontSize: '1.15rem', fontWeight: 700 }}>Sign in</h2>
+          <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginTop: '0.3rem' }}>
+            Enter your institutional credentials to continue.
           </p>
         </div>
 
@@ -89,15 +97,15 @@ export default function LoginPage({ onLogin }) {
             </div>
           </div>
 
-          <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.85rem' }} disabled={loading}>
-            {loading ? 'Authenticating...' : 'Sign In'}
+          <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.9rem' }} disabled={loading}>
+            {loading ? 'Authenticating…' : 'Sign in to Odysseus'}
           </button>
         </form>
 
-        <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-dim)' }}>
-          <p><strong>Demo Credentials:</strong></p>
-          <p>Admin: <code>admin</code> / <code>admin123</code></p>
-          <p>Faculty: <code>faculty</code> / <code>faculty123</code></p>
+        <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-color)', textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-dim)' }}>
+          <p style={{ marginBottom: '0.35rem', fontWeight: 600, color: 'var(--text-muted)' }}>Demo credentials</p>
+          <p>Admin <code>admin</code> / <code>admin123</code></p>
+          <p>Faculty <code>faculty</code> / <code>faculty123</code></p>
         </div>
       </div>
     </div>

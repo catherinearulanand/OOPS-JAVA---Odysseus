@@ -4,10 +4,10 @@ import { BookOpen, Plus, Edit2, Trash2, ListChecks, Target, FlaskConical, Rocket
 const TRACK_ORDER = ['THEORY', 'LAB', 'PROJECT', 'TUTORIAL'];
 
 const TRACK_META = {
-  THEORY: { label: 'Theory Units', icon: BookOpen, color: 'var(--accent-primary)' },
-  LAB: { label: 'Lab Experiments', icon: FlaskConical, color: 'var(--accent-secondary)' },
-  PROJECT: { label: 'Project Track', icon: Rocket, color: 'var(--accent-warning)' },
-  TUTORIAL: { label: 'Tutorial Units', icon: GraduationCap, color: '#a855f7' }
+  THEORY: { label: 'Theory Units', icon: BookOpen, color: 'var(--session-theory)' },
+  LAB: { label: 'Lab Experiments', icon: FlaskConical, color: 'var(--session-lab)' },
+  PROJECT: { label: 'Project Track', icon: Rocket, color: 'var(--session-project)' },
+  TUTORIAL: { label: 'Tutorial Units', icon: GraduationCap, color: 'var(--session-tutorial)' }
 };
 
 const emptyUnitForm = {
