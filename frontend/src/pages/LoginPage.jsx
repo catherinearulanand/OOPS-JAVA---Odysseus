@@ -42,7 +42,7 @@ export default function LoginPage({ onLogin }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '1.5rem' }}>
-      <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
+      <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '2.25rem' }}>
         <div className="brand-wordmark" style={{ fontSize: '2.5rem', lineHeight: 1 }}>
           Odysseus
         </div>
