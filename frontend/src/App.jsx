@@ -15,6 +15,9 @@ import CalendarManagementPage from './pages/CalendarManagementPage';
 import TimeslotManagementPage from './pages/TimeslotManagementPage';
 import DataReadinessPage from './pages/DataReadinessPage';
 import GenerateTimetablePage from './pages/GenerateTimetablePage';
+import SyllabusManagementPage from './pages/SyllabusManagementPage';
+import GenerateLessonPlanPage from './pages/GenerateLessonPlanPage';
+import MyLessonPlansPage from './pages/MyLessonPlansPage';
 
 export default function App() {
   const [user, setUser] = useState(() => {
@@ -107,7 +110,25 @@ export default function App() {
               </ProtectedRoute>
             } />
 
-            <Route path="*" element={<Navigate to={user ? "/dashboard" : "/login"} replace />} />
+            <Route path="/syllabus" element={
+              <ProtectedRoute user={user} requiredRole="ROLE_ADMIN">
+                <SyllabusManagementPage user={user} />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/lesson-plan" element={
+              <ProtectedRoute user={user} requiredRole={["ROLE_ADMIN", "ROLE_FACULTY"]}>
+                <GenerateLessonPlanPage user={user} />
+              </ProtectedRoute>
+            } />
+
+            <Route path="/my-lesson-plans" element={
+              <ProtectedRoute user={user} requiredRole="ROLE_FACULTY">
+                <MyLessonPlansPage user={user} />
+              </ProtectedRoute>
+            } />
+
+            <Route path="*" element={<Navigate to={user ? (user.role === 'ROLE_ADMIN' ? "/dashboard" : "/my-lesson-plans") : "/login"} replace />} />
           </Routes>
         </main>
       </div>

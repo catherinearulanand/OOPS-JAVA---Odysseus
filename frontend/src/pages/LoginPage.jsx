@@ -31,7 +31,7 @@ export default function LoginPage({ onLogin }) {
       if (data.role === 'ROLE_ADMIN') {
         navigate('/dashboard');
       } else {
-        navigate('/faculty-dashboard');
+        navigate('/my-lesson-plans');
       }
     } catch (err) {
       setError(err.message);

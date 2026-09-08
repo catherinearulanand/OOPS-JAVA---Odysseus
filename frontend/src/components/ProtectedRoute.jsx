@@ -6,12 +6,14 @@ export default function ProtectedRoute({ user, requiredRole, children }) {
     return <Navigate to="/login" replace />;
   }
 
-  if (requiredRole && user.role !== requiredRole) {
+  const allowedRoles = Array.isArray(requiredRole) ? requiredRole : requiredRole ? [requiredRole] : null;
+
+  if (allowedRoles && !allowedRoles.includes(user.role)) {
     return (
       <div style={{ padding: '3rem', textAlign: 'center' }}>
         <h2 style={{ color: 'var(--accent-danger)' }}>Access Denied</h2>
         <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>
-          Your role ({user.role}) does not have permission to access Admin CRUD pages.
+          Your role ({user.role}) does not have permission to access this page.
         </p>
       </div>
     );

@@ -332,3 +332,64 @@ body {
   border: 1px solid rgba(239, 68, 68, 0.3);
   color: #fca5a5;
 }
+
+/* Modal overlay (shared by CRUD modals) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Lesson Plan — day-by-day calendar view */
+.lesson-plan-day-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding-bottom: 0.85rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.lesson-plan-day-sessions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.session-card {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent-primary);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.session-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.session-card-body {
+  font-size: 0.85rem;
+}
+
+.session-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
