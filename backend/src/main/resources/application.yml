@@ -1,5 +1,7 @@
 server:
-  port: 8080
+  # Render (and most PaaS hosts) inject PORT at runtime and require the app to
+  # bind to it; 8080 remains the local-dev default.
+  port: ${PORT:8080}
   servlet:
     context-path: /
 

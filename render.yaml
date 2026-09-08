@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: odysseus-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
