@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Sidebar from './components/Sidebar';
 import ProtectedRoute from './components/ProtectedRoute';
 
+import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import AdminDashboard from './pages/AdminDashboard';
 import SubjectManagementPage from './pages/SubjectManagementPage';
@@ -42,6 +43,9 @@ export default function App() {
 
         <main className={user ? "main-content" : ""} style={!user ? { width: '100%' } : {}}>
           <Routes>
+            <Route path="/" element={
+              user ? <Navigate to={user.role === 'ROLE_ADMIN' ? '/dashboard' : '/my-lesson-plans'} replace /> : <LandingPage />
+            } />
             <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
 
             <Route path="/dashboard" element={
@@ -128,7 +132,7 @@ export default function App() {
               </ProtectedRoute>
             } />
 
-            <Route path="*" element={<Navigate to={user ? (user.role === 'ROLE_ADMIN' ? "/dashboard" : "/my-lesson-plans") : "/login"} replace />} />
+            <Route path="*" element={<Navigate to={user ? (user.role === 'ROLE_ADMIN' ? "/dashboard" : "/my-lesson-plans") : "/"} replace />} />
           </Routes>
         </main>
       </div>

@@ -245,6 +245,27 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
+/* High-contrast monochrome CTA, reserved for the landing screen's primary
+   action — everywhere else in the app uses the one accent-colored btn-primary,
+   this is the single deliberate exception (see reference: the landing screen
+   is colorless, the accent lives inside the app). */
+.btn-hero {
+  background: #ffffff;
+  color: #0a0d14;
+  border-radius: 9999px;
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.12);
+}
+
+.btn-hero:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(255, 255, 255, 0.18);
+  background: #f2f4f8;
+}
+
+.btn-hero:active {
+  transform: translateY(0) scale(0.98);
+}
+
 .btn-danger {
   background: rgba(239, 68, 68, 0.15);
   color: var(--accent-danger);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Lock, User, AlertCircle } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Lock, User, AlertCircle, ArrowRight } from 'lucide-react';
 
 export default function LoginPage({ onLogin }) {
   const [username, setUsername] = useState('admin');
@@ -68,7 +68,7 @@ export default function LoginPage({ onLogin }) {
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label className="form-label">Username</label>
+            <label className="form-label">Username:</label>
             <div style={{ position: 'relative' }}>
               <User size={18} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-dim)' }} />
               <input
@@ -83,7 +83,7 @@ export default function LoginPage({ onLogin }) {
           </div>
 
           <div className="form-group" style={{ marginBottom: '2rem' }}>
-            <label className="form-label">Password</label>
+            <label className="form-label">Password:</label>
             <div style={{ position: 'relative' }}>
               <Lock size={18} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-dim)' }} />
               <input
@@ -98,7 +98,7 @@ export default function LoginPage({ onLogin }) {
           </div>
 
           <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center', padding: '0.9rem' }} disabled={loading}>
-            {loading ? 'Authenticating…' : 'Sign in to Odysseus'}
+            {loading ? 'Authenticating…' : <>Sign In to Odysseus <ArrowRight size={16} /></>}
           </button>
         </form>
 
@@ -106,6 +106,12 @@ export default function LoginPage({ onLogin }) {
           <p style={{ marginBottom: '0.35rem', fontWeight: 600, color: 'var(--text-muted)' }}>Demo credentials</p>
           <p>Admin <code>admin</code> / <code>admin123</code></p>
           <p>Faculty <code>faculty</code> / <code>faculty123</code></p>
+        </div>
+
+        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+          <Link to="/" style={{ color: 'var(--text-dim)', fontSize: '0.82rem', textDecoration: 'none' }}>
+            ← Back to Landing Page
+          </Link>
         </div>
       </div>
     </div>

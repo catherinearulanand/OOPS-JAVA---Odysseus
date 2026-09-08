@@ -101,7 +101,7 @@ export default function AdminDashboard({ user }) {
         </div>
 
         <div className="glass-panel" style={{ textAlign: 'center' }}>
-          <BookMarked size={24} style={{ color: '#a855f7', marginBottom: '0.5rem' }} />
+          <BookMarked size={24} style={{ color: 'var(--session-tutorial)', marginBottom: '0.5rem' }} />
           <div style={{ fontSize: '1.75rem', fontWeight: 800 }}>{stats.offerings}</div>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Active Offerings</div>
         </div>
@@ -109,7 +109,7 @@ export default function AdminDashboard({ user }) {
 
       {/* Workflow Navigation Cards */}
       <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1.25rem' }}>
-        Person A — Recommended Data Setup Workflow
+        Recommended Setup Workflow
       </h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.25rem' }}>
@@ -119,7 +119,7 @@ export default function AdminDashboard({ user }) {
             <Link key={idx} to={step.path} style={{ textDecoration: 'none', color: 'inherit' }}>
               <div className="glass-panel" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ padding: '0.75rem', borderRadius: 'var(--radius-md)', background: 'rgba(99, 102, 241, 0.15)', color: 'var(--accent-primary)' }}>
+                  <div style={{ padding: '0.75rem', borderRadius: 'var(--radius-md)', background: 'rgba(77, 130, 255, 0.15)', color: 'var(--accent-primary)' }}>
                     <Icon size={22} />
                   </div>
                   <div>
