@@ -101,7 +101,7 @@ export default function AdminDashboard({ user }) {
         </div>
 
         <div className="glass-panel" style={{ textAlign: 'center' }}>
-          <BookMarked size={24} style={{ color: 'var(--session-tutorial)', marginBottom: '0.5rem' }} />
+          <BookMarked size={24} style={{ color: 'var(--session-tutorial-text)', marginBottom: '0.5rem' }} />
           <div style={{ fontSize: '1.75rem', fontWeight: 800 }}>{stats.offerings}</div>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Active Offerings</div>
         </div>

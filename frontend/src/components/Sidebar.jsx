@@ -17,14 +17,11 @@ export default function Sidebar({ user, onLogout }) {
 
   return (
     <aside className="sidebar">
-      <div className="brand-header">
-        <div className="brand-logo">O</div>
-        <div>
-          <h1 className="brand-title">ODYSSEUS</h1>
-          <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)', letterSpacing: '0.05em' }}>
-            {isAdmin ? 'ADMIN & DATA LAYER' : 'FACULTY PORTAL'}
-          </span>
-        </div>
+      <div className="brand-header" style={{ display: 'block' }}>
+        <h1 className="brand-title">Odysseus</h1>
+        <span style={{ fontSize: '0.7rem', color: 'var(--text-dim)', letterSpacing: '0.05em' }}>
+          {isAdmin ? 'ADMIN & DATA LAYER' : 'FACULTY PORTAL'}
+        </span>
       </div>
 
       <nav className="nav-group">

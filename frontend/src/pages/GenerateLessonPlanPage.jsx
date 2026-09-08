@@ -6,10 +6,10 @@ import {
 } from 'lucide-react';
 
 const TYPE_META = {
-  THEORY: { label: 'Theory', color: 'var(--session-theory)', icon: BookOpen },
-  LAB: { label: 'Lab', color: 'var(--session-lab)', icon: FlaskConical },
-  PROJECT: { label: 'Project', color: 'var(--session-project)', icon: Rocket },
-  TUTORIAL: { label: 'Tutorial', color: 'var(--session-tutorial)', icon: GraduationCap }
+  THEORY: { label: 'Theory', gradientClass: 'jewel-theory', icon: BookOpen },
+  LAB: { label: 'Lab', gradientClass: 'jewel-lab', icon: FlaskConical },
+  PROJECT: { label: 'Project', gradientClass: 'jewel-project', icon: Rocket },
+  TUTORIAL: { label: 'Tutorial', gradientClass: 'jewel-tutorial', icon: GraduationCap }
 };
 
 const STATUS_BADGE = {
@@ -300,26 +300,26 @@ export default function GenerateLessonPlanPage({ user }) {
                   const Icon = meta.icon;
                   const isPlanned = session.status === 'PLANNED';
                   return (
-                    <div key={session.id} className="session-card" style={{ borderLeftColor: meta.color }}>
+                    <div key={session.id} className={`session-card ${meta.gradientClass}`}>
                       <div className="session-card-top">
-                        <span className="badge" style={{ background: `${meta.color}22`, color: meta.color, border: `1px solid ${meta.color}55` }}>
+                        <span className="badge" style={{ background: 'rgba(255,255,255,0.14)', color: '#ffffff', border: '1px solid rgba(255,255,255,0.22)', backdropFilter: 'blur(4px)' }}>
                           <Icon size={13} /> {meta.label}
                         </span>
                         <span className={`badge ${STATUS_BADGE[session.status] || 'badge-warning'}`}>{session.status}</span>
                       </div>
                       <div className="session-card-body">
                         <strong>Unit {session.syllabusUnit?.unitNumber}</strong> — {session.syllabusUnit?.title}
-                        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.3rem' }}>
+                        <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.75)', marginTop: '0.3rem' }}>
                           {session.periodsCount} period{session.periodsCount > 1 ? 's' : ''} · #{session.overallSequence}
                           {session.startTimeslot?.periodLabel && <> · {session.startTimeslot.periodLabel}</>}
                         </div>
                         {session.remarks && (
-                          <div style={{ fontSize: '0.78rem', color: 'var(--text-dim)', marginTop: '0.3rem', fontStyle: 'italic' }}>
+                          <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.6)', marginTop: '0.3rem', fontStyle: 'italic' }}>
                             {session.remarks}
                           </div>
                         )}
                         {session.status === 'RESCHEDULED' && session.rescheduledTo && (
-                          <div style={{ fontSize: '0.78rem', color: 'var(--accent-danger)', marginTop: '0.3rem' }}>
+                          <div style={{ fontSize: '0.78rem', color: '#fca5a5', marginTop: '0.3rem', fontWeight: 600 }}>
                             Moved to {session.rescheduledTo.sessionDate}
                           </div>
                         )}

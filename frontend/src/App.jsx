@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import ProtectedRoute from './components/ProtectedRoute';
 
@@ -19,6 +19,18 @@ import GenerateTimetablePage from './pages/GenerateTimetablePage';
 import SyllabusManagementPage from './pages/SyllabusManagementPage';
 import GenerateLessonPlanPage from './pages/GenerateLessonPlanPage';
 import MyLessonPlansPage from './pages/MyLessonPlansPage';
+
+// Keying by pathname forces a remount on every navigation, which replays the
+// route-transition slide-up-and-fade animation (ported from the original
+// prototype's app-screen.active transition) instead of a hard cut.
+function PageTransition({ children }) {
+  const location = useLocation();
+  return (
+    <div key={location.pathname} className="route-transition">
+      {children}
+    </div>
+  );
+}
 
 export default function App() {
   const [user, setUser] = useState(() => {
@@ -42,6 +54,7 @@ export default function App() {
         {user && <Sidebar user={user} onLogout={handleLogout} />}
 
         <main className={user ? "main-content" : ""} style={!user ? { width: '100%' } : {}}>
+          <PageTransition>
           <Routes>
             <Route path="/" element={
               user ? <Navigate to={user.role === 'ROLE_ADMIN' ? '/dashboard' : '/my-lesson-plans'} replace /> : <LandingPage />
@@ -134,6 +147,7 @@ export default function App() {
 
             <Route path="*" element={<Navigate to={user ? (user.role === 'ROLE_ADMIN' ? "/dashboard" : "/my-lesson-plans") : "/"} replace />} />
           </Routes>
+          </PageTransition>
         </main>
       </div>
     </Router>

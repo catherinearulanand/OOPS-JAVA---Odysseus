@@ -8,7 +8,7 @@ export default function LandingPage() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '1.5rem' }}>
       <div className="fade-in-up" style={{ textAlign: 'center', maxWidth: '620px' }}>
-        <div className="brand-wordmark" style={{ fontSize: 'clamp(2.75rem, 8vw, 5rem)', lineHeight: 1 }}>
+        <div className="brand-wordmark" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1 }}>
           Odysseus
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '1rem', marginTop: '1.25rem', maxWidth: '440px', marginLeft: 'auto', marginRight: 'auto', lineHeight: 1.6 }}>
@@ -21,20 +21,9 @@ export default function LandingPage() {
             onClick={() => navigate('/login')}
             style={{ minWidth: '280px', justifyContent: 'center', padding: '1rem 1.75rem', fontSize: '0.95rem' }}
           >
-            Enter as Admin <ArrowRight size={17} />
+            Enter Odysseus <ArrowRight size={17} />
           </button>
-          <span style={{ fontSize: '0.78rem', color: 'var(--text-dim)', letterSpacing: '0.04em' }}>Admin Portal</span>
-        </div>
-
-        <div style={{ marginTop: '1.25rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem' }}>
-          <button
-            className="btn btn-secondary"
-            onClick={() => navigate('/login')}
-            style={{ minWidth: '280px', justifyContent: 'center', padding: '1rem 1.75rem', fontSize: '0.95rem' }}
-          >
-            Faculty Portal
-          </button>
-          <span style={{ fontSize: '0.78rem', color: 'var(--text-dim)', letterSpacing: '0.04em' }}>Lesson plans &amp; teaching schedule</span>
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-dim)', letterSpacing: '0.04em' }}>Admin &amp; Faculty Portal</span>
         </div>
       </div>
     </div>

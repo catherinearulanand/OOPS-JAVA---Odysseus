@@ -43,7 +43,7 @@ export default function LoginPage({ onLogin }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', padding: '1.5rem' }}>
       <div className="fade-in-up" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-        <div className="brand-wordmark" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.25rem)', lineHeight: 1, background: 'linear-gradient(to bottom, #ffffff, #b7bfd4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <div className="brand-wordmark" style={{ fontSize: '2.5rem', lineHeight: 1 }}>
           Odysseus
         </div>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '0.85rem', maxWidth: '360px', marginLeft: 'auto', marginRight: 'auto' }}>
@@ -51,9 +51,9 @@ export default function LoginPage({ onLogin }) {
         </p>
       </div>
 
-      <div className="glass-panel fade-in-up" style={{ width: '100%', maxWidth: '420px', padding: '2.75rem', boxShadow: '0 24px 60px rgba(0,0,0,0.5)', animationDelay: '0.08s' }}>
+      <div className="glass-panel fade-in-up" style={{ width: '100%', maxWidth: '420px', padding: '32px 28px', boxShadow: '0 12px 40px rgba(0,0,0,0.8)', animationDelay: '0.08s' }}>
         <div style={{ marginBottom: '1.75rem' }}>
-          <h2 style={{ fontSize: '1.15rem', fontWeight: 700 }}>Sign in</h2>
+          <h2 style={{ fontSize: '1.75rem' }}>Sign In</h2>
           <p style={{ color: 'var(--text-dim)', fontSize: '0.85rem', marginTop: '0.3rem' }}>
             Enter your institutional credentials to continue.
           </p>
