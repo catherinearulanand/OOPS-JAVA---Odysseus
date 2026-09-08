@@ -41,4 +41,22 @@ public class Subject {
 
     @Builder.Default
     private boolean active = true;
+
+    // --- Lesson Plan module additions (Person C) ---
+    // Weekly period counts from the R23 curriculum's "Periods/Week (L,T,P,R)" column.
+    // Distinct from theoryCredits/labCredits/tutorialCredits above, which are NEP
+    // credit values consumed by CreditCalculationService. These are raw period counts
+    // as printed in the curriculum document and are NOT run through any credit rule.
+    private Integer weeklyLecturePeriods;   // L
+    private Integer weeklyTutorialPeriods;  // T
+    private Integer weeklyPracticalPeriods; // P (lab)
+    private Integer weeklyProjectPeriods;   // R (project/research — distinct from P;
+                                             // e.g. OOP-Java has P=0, R=4)
+
+    // The curriculum document's own "C" (total credits) column, kept purely for
+    // display/traceability back to the curriculum table. NOT used by
+    // CreditCalculationService and NOT guaranteed to equal
+    // theoryCredits+labCredits+tutorialCredits (those are computed via NepCreditRule;
+    // this is the number printed in the syllabus document).
+    private Double curriculumCredits;
 }
