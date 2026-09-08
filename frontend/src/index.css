@@ -85,16 +85,24 @@ h1, h2, h3, h4 {
 }
 
 /* Route-level transition: every page mounts with the same slide-up-and-fade
-   the original prototype used when switching between its app-screens. */
+   the original prototype used when switching between its app-screens.
+   Deliberately animates `top` on a `position: relative` element instead of
+   `transform: translateY(...)`. A `transform` animation on an ancestor
+   becomes the containing block for any `position: fixed` descendant (CRUD
+   modals, the H2-console-style overlays used throughout this app), which
+   silently breaks every fixed-position modal's viewport centering as long
+   as this wrapper exists in the tree. `top` on a relatively-positioned
+   element produces the same visual slide without that side effect. */
 @media (prefers-reduced-motion: no-preference) {
   .route-transition, .fade-in-up {
+    position: relative;
     animation: slideUpFromBottom 0.5s var(--ease-premium) both;
   }
 }
 
 @keyframes slideUpFromBottom {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: none; }
+  from { opacity: 0; top: 40px; }
+  to { opacity: 1; top: 0; }
 }
 
 .brand-wordmark {
